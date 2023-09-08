@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The use of local and session storage in html</title>
+  </head>
+  <body>
+    <button id="count">click me</button>
+    <div id="result"></div>
+  </body>
+  <script>
+    var i = 0;
+    let y = document.getElementById("result");
+    if (typeof Storage != "undefined") {
+      i = localStorage.getItem("click_count");
+    } else {
+      alert("local storage is not defined");
+    }
+    document.getElementById("count").addEventListener("click", function () {
+      console.log("hello");
+      i++;
+      localStorage.setItem("click_count", i);
+      y.innerText =
+        "you clicked the button " + localStorage.click_count + " times";
+    });
+  </script>
+</html>

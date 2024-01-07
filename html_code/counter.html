@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="time"></div>
+    <button type="button" id="link">
+      <a href="counter.html">Visit link</a>
+    </button>
+  </body>
+  <script>
+    var total_time = 60;
+    var minutes, seconds;
+    function quiz_time() {
+      if (localStorage != "undefined") {
+        if (localStorage.updated_time) {
+          localStorage.updated_time = Number(localStorage.updated_time) - 1;
+        } else {
+          localStorage.updated_time = total_time;
+        }
+        minutes = Math.floor(Number(localStorage.updated_time) / 60);
+        seconds = Number(localStorage.updated_time) % 60;
+        time = `${minutes < 10 ? "0" : ""}${minutes}:${
+          seconds < 10 ? "0" : ""
+        }${seconds}`;
+        console.log(Number(localStorage.updated_time));
+        document.getElementById("time").innerHTML = time;
+        setTimeout(quiz_time, 1000);
+      }
+      <!-- outer if statemenet ends here -->
+      else {
+        alert("local storage is not supported");
+      }
+      if (localStorage.updated_time == 35) {
+        alert("time up");
+        localStorage.removeItem("updated_time");
+        document.getElementById("link").click();
+      }
+    }
+
+    quiz_time();
+  </script>
+</html>

@@ -1,0 +1,15 @@
+@media screen and (min-width:867px) {
+    #calculator{
+        width: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        
+    }
+}
+@media screen and (min-width: 500px) and (max-width:866px ) {
+    #calculator{
+        width: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

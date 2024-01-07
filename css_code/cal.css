@@ -1,0 +1,105 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial;
+  }
+  #calculator {
+    width: 100%;
+    height: 90%;
+    position: fixed;
+    background-color: rgb(53, 39, 39);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+  }
+  #calculator #screen {
+    height: 40%;
+    background-color: rgb(54, 51, 51);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 50px;
+    width: 100%;
+    padding-right: 50px;
+    overflow: hidden;
+  }
+  #input_buttons table {
+    border-collapse: collapse;
+  }
+  #calculator #input_buttons {
+    height: 60%;
+    width: 100%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 1rem;
+   padding: 10px 20px;
+  }
+
+  input[type="button"],
+  button {
+    display: inline-block;
+    border: none;
+    font-size: 40px;
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: inherit;
+  }
+
+  input#display {
+    border: none;
+    text-align: right;
+    background-color: inherit;
+    color: white;
+    font-size: 50px;
+    outline: none;
+    width: 100%;
+  }
+  input#result {
+    border: none;
+    text-align: right;
+    background-color: inherit;
+    font-size: 30px;
+    color: #fff;
+    outline: none;
+    width: 100%;
+  }
+
+  input#display.equal2 {
+    transition: transform 1s, opacity 1s;
+    -webkit-transition: opacity 1s, transform 1s; /* for safari */
+    opacity: 0;
+    transform: translate(-50px, -200px);
+    -webkit-transform: translate(-50px, -200px); /* for safari */
+    -ms-transform: translate(-50px, -200px); /* for IE 9 */
+  }
+  input#result.equal {
+    transition: font-size 1s, transform 1s;
+    -webkit-transition: font-size 1s, transform 1s; /* for safari */
+    font-size: 50px;
+    transform: translate(-30px, -80px);
+    -webkit-transform: translate(-30px, -80px); /* for safari */
+    -ms-transform: translate(-30px, -80px); /* for IE 9 */
+  }
+  input#equal {
+    background-color: green;
+    color: white;
+    grid-row: span 2;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80%;
+    justify-self: center;
+  }
+  input.green,
+  button.green {
+    color: green;
+  }
+  input.white {
+    color: white;
+  }

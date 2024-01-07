@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style type="text/css"></style>
-    <script src="./jquery-3.6.1.min.js"></script>
+    <script src="./javaScript/jquery-3.6.1.min.js"></script>
     <link rel="stylesheet" href="fontawesome/css/all.css" />
 
     <link
@@ -30,7 +30,15 @@
         max-width: 400px;
         height: fit-content;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        height: 85vh;
+        position: fixed;
+        overflow: auto;
+        -ms-overflow-style: none;
       }
+      .container::-webkit-scrollbar {
+        display: none;
+      }
+
       .container h3 {
         text-align: center;
         font-size: 25px;
@@ -106,14 +114,20 @@
       .done {
         color: green;
       }
+      #header {
+        position: sticky;
+        top: 0px;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <h3>ToDo List</h3>
-      <div id="create">
-        <input type="text" id="input" autofocus />
-        <button id="add">Add</button>
+      <div id="header">
+        <h3>ToDo List</h3>
+        <div id="create">
+          <input type="text" />
+          <button id="add">Add</button>
+        </div>
       </div>
       <ol id="todolist"></ol>
     </div>
